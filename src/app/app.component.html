@@ -1,0 +1,132 @@
+<!-- <h1>{{title}}</h1>
+
+<li *ngFor="let x of inventory" [class.featured]="x.featured">
+  <img [src]="x.image" width="100px">
+  <p>Id:{{x.id}}</p>
+  <p>Name:{{x.name | uppercase}}</p>
+  <p>Description: {{x.description}}</p>
+  <p *ngIf="x.inStock > 0">InStock: {{x.inStock}}</p>
+  <p *ngIf="x.inStock === 0">"out of stock"</p>
+  <p>Price: {{x.Price | currency: 'USD'}}</p>
+  <p>Quantity: {{x.qty}}</p>
+
+  <button (click) = "increaseQty(x)"> + </button>
+  <button (click) = "decreaseQty(x)"> - </button>
+
+
+</li>
+
+
+<p>Inventory: {{totalInventory()}} item in stock </p> -->
+
+<h1 _ngcontent-yjd-c15="">Burger-N-Frie$</h1>
+<br>
+<h3><p> {{getCart()}} item in your cart </p></h3>
+<input type="text" placeholder="Search" ((search))="totalInventory()" >
+
+<div class='table-responsive'>
+  <table class='table'
+         >
+    <thead>
+      <tr>
+        <!-- <th>
+          <button class='btn btn-primary'
+                  (click)='toggleImage()'>
+            {{showImage ? 'Hide' : 'Show'}} Image
+          </button>
+        </th> -->
+        <th>Item</th>
+        <th>Name</th>
+        <!-- <th>Description</th> -->
+        <th>Price</th>
+        <th>Brand</th>
+        <th>Quantity</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of inventory" [class.featured]="x.featured">
+        <td>
+          <img [src]="x.image" width="100px">
+
+        </td>
+        <td>
+            {{ x.name }}
+          
+        </td>
+      
+        <!-- <td>{{ x.description }}</td> -->
+        <td>{{ x.Price | currency:'CAD':'symbol':'1.2-2'}}</td>
+        <td>{{ x.brand }} </td>
+
+        <!-- <td>{{ x.qty}} 
+          <p *ngIf="x.inStock > 0">InStock: {{x.inStock}}</p>
+         <p *ngIf="x.inStock === 0">out of stock</p>  
+         <button (click) = "increaseQty(x)"> + </button>
+         <button (click) = "decreaseQty(x)"> - </button>
+       </td> 
+       
+        <td> -->
+          <!-- <p *ngIf="x.inStock >= x.qty"> {{x.inStock}} instock</p>
+          <p *ngIf="x.inStock === 0">out of stock</p>   -->
+
+          <td _ngcontent-yjd-c14=""><button _ngcontent-yjd-c14="" type="button" class="btn btn-primary" (click) = "increaseQty(x)"> + </button></td>
+            <td  _ngcontent-yjd-c14="" > <input _ngcontent-yjd-c14="" type="number"  [(ngModel)]=" x.qty"  min="0" oninput="validity.valid||(value='');" class="ng-valid ng-dirty ng-touched"  > </td>
+          <td _ngcontent-yjd-c14=""><button _ngcontent-yjd-c14="" type="button" class="btn btn-danger" (click) = "decreaseQty(x)"> - </button></td>
+                <p style="color: green;" *ngIf="x.qty > 0">Enjoy your {{x.description }} {{x.name}}</p>
+                <p  style="color: rgb(204, 43, 11);" *ngIf="x.qty <= 0">No Cheese Burger today? </p>
+
+                <!-- <td _ngcontent-yjd-c14=""><b _ngcontent-yjd-c14="" style="color: green;">we only have: {{x.inStock}} Availabe</b></td> -->
+            <h3 *ngIf="x.qty > x.inStock"> Sorry there's only {{x.inStock}} Availabe</h3>
+
+
+              </tr> <br>
+    
+
+         <th> <h3>Total Price: {{totalPrice() | currency:'CAD'}}  </h3></th> 
+         <br>
+         <br>
+         <img src="\assets\chucknorris_logo_coloured_small@2x.png" alt="chuck norris" class="logo">
+
+         <!-- <div class="categories">
+           <span>Categories</span>
+           <span>Categories</span>
+           <span>Categories</span>           
+         </div>
+
+         <div class="joke-wrapper">
+           <div class="joke">
+             <img src="\assets\chucknorris_logo_coloured_small@2x.png" alt="icon">
+             <p>Funny Jokes</p>
+           </div>
+           
+         <div class="joke-wrapper">
+          <div class="joke">
+            <img src="\assets\chucknorris_logo_coloured_small@2x.png" alt="icon">
+            <p>Funny Jokes</p>
+          </div>
+
+          <div class="joke-wrapper">
+            <div class="joke">
+              <img src="\assets\chucknorris_logo_coloured_small@2x.png" alt="icon">
+              <p>Funny Jokes</p>
+            </div>
+            
+         <div class="joke-wrapper">
+          <div class="joke">
+            <img src="\assets\chucknorris_logo_coloured_small@2x.png" alt="icon">
+            <p>Funny Jokes</p>
+          </div>
+          
+         <div class="joke-wrapper">
+          <div class="joke">
+            <img src="\assets\chucknorris_logo_coloured_small@2x.png" alt="icon">
+            <p>Funny Jokes</p>
+          </div>
+           
+         </div> -->
+
+
+
+          
